@@ -96,7 +96,10 @@ for elem in melb_study_list:
         weight_melb.append([s for s in elem if 'Body Weight' in s])
     else:
         weight_melb.append([""])
-    med_hist_melb.append(elem[4])
+    if any('Medical History' in s for s in elem):
+        med_hist_melb.append([s for s in elem if 'Medical History' in s])
+    else:
+        med_hist_melb.append([""])
     smoke_hist_melb.append(elem[5])
     status_melb.append(elem[6])
     inpatient_melb.append(elem[7])
@@ -143,11 +146,14 @@ weight_melb = [item for subl in weight_melb for item in subl]
 # Standardise Weight strings
 weight_melb = [elem.replace('\u202f', ' ') for elem in weight_melb]
 weight_melb = [elem.replace('–', '-') for elem in weight_melb]
-weight_melb
-# Extract min and max BMI from string
+# Extract weight requirement from string
 melb_weight = [find_between(elem, 'Weight ', 'kg') for elem in weight_melb]
 melb_weight
 #melb_weight_min = [elem.split('-')[0] for elem in melb_BMI]
-#melb_BMI_max = [elem.split('-')[1] for elem in melb_BMI]
-#melb_BMI_min
-#melb_BMI_max
+
+###---------Medical History------------
+# Flatten list of lists
+med_hist_melb = [item for subl in med_hist_melb for item in subl]
+# Extract medical history condition
+med_hist_melb = [elem.split('History ')[1] for elem in med_hist_melb]
+med_hist_melb

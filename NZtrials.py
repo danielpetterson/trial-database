@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+from trial_helper_funcs import find_between, strip_post_num, strip_pre_colon, total_days
 
 ###---Auckland---
 # Read in ACS table
@@ -66,53 +67,6 @@ nz_df['inpatient']=[val for val in nz_df['inpatient'].str.lower()]
 nz_df['outpatient']=[val for val in nz_df['outpatient'].str.lower()]
 nz_df['inpatient'] = nz_df['inpatient'].apply(lambda x: ' '.join([to_sub.get(i, i) for i in x.split()]))
 
-# Remove all text after final digit
-def strip_post_num( col ):
-    lst = []
-    for elem in col.iteritems():
-        if (match := re.search('(^.*\d)', elem[1]) is not None):
-            lst.append(re.search('(^.*\d)', elem[1]).group(1))
-        else:
-            lst.append(elem[1])
-        col = pd.Series(lst)
-    return col
-
-# Remove all text before colon
-def strip_pre_colon( col ):
-    lst = []
-    for elem in col.iteritems():
-        if (match := re.search('(:.*)', elem[1]) is not None):
-            string = re.search('(:.*)', elem[1]).group(1)
-            string = string.replace(':','').lstrip().replace('x ',' ')
-            lst.append(string)
-        else:
-            lst.append(elem[1].replace('x ',' '))
-        col = pd.Series(lst)
-    return col
-
-def total_days( col ):
-    lst = []
-    for elem in col.iteritems():
-        str = elem[1]
-        if str == 'None':
-            lst.append('0')
-        if match := re.search('(^.*\d)', str) is not None:
-            if len(str.split()) > 1:
-                lst.append(int(str.split()[0])*int(str.split()[-1]))
-            else:
-                lst.append(str)
-        else:
-            lst.append(str)
-        col = pd.Series(lst)
-    return col
-
-def find_between( s, first, last ):
-    try:
-        start = s.index( first ) + len( first )
-        end = s.index( last, start )
-        return s[start:end]
-    except ValueError:
-        return ""
 
 nz_df['inpatient'] = strip_post_num(nz_df['inpatient'])
 nz_df['inpatient'] = strip_pre_colon(nz_df['inpatient'])
@@ -121,21 +75,22 @@ nz_df['inpatient'] = total_days(nz_df['inpatient'])
 nz_df['outpatient'] = strip_post_num(nz_df['outpatient'])
 nz_df['outpatient'] = strip_pre_colon(nz_df['outpatient'])
 
+nz_df['status'] = nz_df['status'].str.contains('currently recruiting', case=False)
+nz_df.rename(columns = {'status':'recruiting'}, inplace = True)
+
 nz_df
 
 
 
 def requirements( eligibility_col ):
-    healthy, sex, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max = [], [], [], [], [], [], [], []
+    healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max = [], [], [], [], [], [], [], [], []
     for elem in eligibility_col:
         elem = elem.lower()
         healthy.append(any(substring in elem for substring in ['healthy', 'good health']))
-        if (match := re.search('(^| )male', elem) is not None) and (match := re.search('(^| )female', elem) is not None):
-            sex.append('both')
-        elif (match := re.search('(^| )female', elem) is not None):
-            sex.append('female only')
-        else:
-            sex.append('male only')
+        if (match := re.search('(^| )male', elem) is not None):
+            sex_male.append(True)
+        if (match := re.search('(^| )female', elem) is not None):
+            sex_female.append(True)
         elem_age_range = elem.split('year')[0].split('weight')[0].split('aged ')[1].split(' ')[0].split('-')
         age_min.append(elem_age_range[0])
         if len(elem_age_range) > 1:
@@ -151,7 +106,7 @@ def requirements( eligibility_col ):
             else:
                 BMI_max.append('')
         else:
-            BMI_min.append('Not Specified')
+            BMI_min.append('')
             BMI_max.append('')
         if 'weigh' in elem:
             elem_weight_range = find_between(elem, 'weigh', 'kg').rstrip().split(' ')[-1].replace('>','').split('-')
@@ -159,13 +114,13 @@ def requirements( eligibility_col ):
             if len(elem_weight_range) > 1:
                 weight_max.append(elem_weight_range[-1])
             else:
-                weight_max.append('Not Specified')
+                weight_max.append('')
         else:
-            weight_min.append('Not Specified')
+            weight_min.append('')
             weight_max.append('')
 
-    df = pd.DataFrame(list(zip(healthy, sex, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max)),
-               columns =['healthy', 'sex', 'age_min', 'age_max', 'BMI_min', 'BMI_max', 'weight_min', 'weight_max'])
+    df = pd.DataFrame(list(zip(healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max)),
+               columns =['healthy', 'sex_male', 'sex_female', 'age_min', 'age_max', 'BMI_min', 'BMI_max', 'weight_min', 'weight_max'])
 
     return df
 

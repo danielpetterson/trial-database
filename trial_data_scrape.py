@@ -16,7 +16,7 @@ from html_table_parser.parser import HTMLTableParser
 # .decode('utf-8')
 
 
-html_melb = urllib.request.urlopen('https://www.nucleusnetwork.com/au/participate-in-a-trial/melbourne-clinical-trials/')
+html_melb = urllib.request.urlopen('https://www.nucleusnetwork.com/au/participate-in-a-trial/brisbane-clinical-trials//')
 melb_soup = BeautifulSoup(html_melb, 'html.parser')
 #melb_soup
 melb_containers = melb_soup.find_all('li')
@@ -100,3 +100,5 @@ med_hist_melb = [item for subl in med_hist_melb for item in subl]
 # Extract medical history condition
 med_hist_melb = [elem.split('History ')[1] for elem in med_hist_melb]
 med_hist_melb
+
+melb_study_list

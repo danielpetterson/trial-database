@@ -1,88 +1,165 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import re
 import pandas as pd
 
-html = urllib.request.urlopen('https://www.nucleusnetwork.com/au/participate-in-a-trial/brisbane-clinical-trials/')
+html = urllib.request.urlopen('https://www.nucleusnetwork.com/au/participate-in-a-trial/melbourne-clinical-trials/')
 soup = BeautifulSoup(html, 'html.parser')
-#soup
 containers = soup.find_all('li')
-
 text = []
 for line in containers:
     text.append(line.get_text())
+# Extract relevant lines minus header
+study_list = [i for i in text if 'Study name' in i][1:]
 
-study_list = [i for i in text if 'Study name' in i]
-study_list = [elem.split("\n") for elem in study_list][1:]
-#study_list
+study_list
 
-sex, age, BMI, weight, med_hist, smoke_hist, status, inpatient, outpatient = [], [], [], [], [], [], [], [], []
+def nucleus_df( html ):
+    soup = BeautifulSoup(html, 'html.parser')
+    containers = soup.find_all('li')
+    text = []
+    for line in containers:
+        text.append(line.get_text())
+    # Extract relevant lines minus header
+    study_list = [i for i in text if 'Study name' in i][1:]
+    study_name, eligibility, status, inpatient, outpatient, payment, city = [], [], [], [], [], [], []
+    study_list = [re.sub('( ?)-( ?)|( ?)–( ?)','-',elem) for elem in study_list]
+    study_list = list(map(str.lower,study_list))
+    for elem in study_list:
+        healthy.append(any(substring in elem for substring in ['healthy']))
+        if (match := re.search('(^| )male', elem) is not None):
+            sex_male.append(True)
+        if (match := re.search('(^| )female', elem) is not None):
+            sex_female.append(True)
+        elem_age_range = elem.split('\n')[1].split('age ')[1].split('years')[0].split('-')
+        age_min.append(elem_age_range[0])
+        if len(elem_age_range) > 1:
+            age_max.append(elem_age_range[-1])
+        else:
+            age_max.append('')
+        elem_bmi = elem.split('\n')[2].split(' kg/m')[0]
+        if 'bmi' in elem_bmi:
+            bmi_range = elem_bmi.split(' ')[-1].split('-')
+            BMI_min.append(bmi_range[0])
+            if len(bmi_range) > 1:
+                BMI_max.append(bmi_range[-1])
+            else:
+                BMI_max.append('')
+        else:
+            BMI_min.append('')
+            BMI_max.append('')
+        if 'weight' in elem:
+            elem_weight_range = find_between(elem, 'weight', 'kg').replace('>','').strip().split('-')#[-1].split('-')
+            weight_min.append(elem_weight_range[0])
+            if len(elem_weight_range) > 1:
+                weight_max.append(elem_weight_range[-1])
+            else:
+                weight_max.append('')
+        else:
+            weight_min.append('')
+            weight_max.append('')
 
-for elem in study_list:
-    sex.append(elem[0])
-    age.append(elem[1])
-    BMI.append(elem[2])
-    if any('Body Weight' in s for s in elem):
-        weight.append([s for s in elem if 'Body Weight' in s])
-    else:
-        weight.append([""])
-    if any('Medical History' in s for s in elem):
-        med_hist.append([s for s in elem if 'Medical History' in s])
-    else:
-        med_hist.append([""])
-    smoke_hist.append(elem[5])
-    status.append(elem[6])
-    inpatient.append(elem[7])
-    outpatient.append(elem[8])
+    df = pd.DataFrame(list(zip(healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max)),
+               columns =['healthy', 'sex_male', 'sex_female', 'age_min', 'age_max', 'BMI_min', 'BMI_max', 'weight_min', 'weight_max'])
 
+    return df
 
-def find_between( s, first, last ):
-    try:
-        start = s.index( first ) + len( first )
-        end = s.index( last, start )
-        return s[start:end]
-    except ValueError:
-        return ""
+nucleus_df(html)
 
-###---------Age------------
-# Standardise age strings
-age = [elem.replace('\u202f', ' ') for elem in age]
-age = [elem.replace('–', '-') for elem in age]
-age = [elem.replace(' ', '') for elem in age]
+study_list
 
-# Extract min and max ages from string
-age = [find_between(elem, 'Age', 'years') for elem in age]
-age_min = [elem.split('-')[0] for elem in age]
-age_max = [elem.split('-')[1] for elem in age]
-#age_min
-#age_max
+def study_info_nucleus( study_list ):
 
-###---------BMI------------
-# Standardise BMI strings
-BMI = [elem.replace('\u202f', ' ') for elem in BMI]
-BMI = [elem.replace('–', '-') for elem in BMI]
-BMI = [elem.replace(' ', '') for elem in BMI]
+    study_name, eligibility, recruiting, inpatient, outpatient, payment, city = [], [], [], [], [], [], []
+    study_list = [re.sub('( ?)-( ?)|( ?)–( ?)','-',elem) for elem in study_list]
+    study_list = list(map(str.lower,study_list))
+    for elem in study_list:
+        study_name.append(find_between(elem.split('\n')[0], 'study name ', ' study').capitalize())
+        eligibility.append(elem)
+        if (match := re.search('currently recruiting', elem) is not None):
+            recruiting.append(True)
+    #
+    #
+    #     if (match := re.search('(^| )male', elem) is not None):
+    #         sex_male.append(True)
+    #     if (match := re.search('(^| )female', elem) is not None):
+    #         sex_female.append(True)
+    #     elem_age_range = elem.split('\n')[1].split('age ')[1].split('years')[0].split('-')
+    #     age_min.append(elem_age_range[0])
+    #     if len(elem_age_range) > 1:
+    #         age_max.append(elem_age_range[-1])
+    #     else:
+    #         age_max.append('')
+    #     elem_bmi = elem.split('\n')[2].split(' kg/m')[0]
+    #     if 'bmi' in elem_bmi:
+    #         bmi_range = elem_bmi.split(' ')[-1].split('-')
+    #         BMI_min.append(bmi_range[0])
+    #         if len(bmi_range) > 1:
+    #             BMI_max.append(bmi_range[-1])
+    #         else:
+    #             BMI_max.append('')
+    #     else:
+    #         BMI_min.append('')
+    #         BMI_max.append('')
+    #     if 'weight' in elem:
+    #         elem_weight_range = find_between(elem, 'weight', 'kg').replace('>','').strip().split('-')#[-1].split('-')
+    #         weight_min.append(elem_weight_range[0])
+    #         if len(elem_weight_range) > 1:
+    #             weight_max.append(elem_weight_range[-1])
+    #         else:
+    #             weight_max.append('')
+    #     else:
+    #         weight_min.append('')
+    #         weight_max.append('')
+    #
+    # df = pd.DataFrame(list(zip(healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max)),
+    #            columns =['healthy', 'sex_male', 'sex_female', 'age_min', 'age_max', 'BMI_min', 'BMI_max', 'weight_min', 'weight_max'])
+    #
+    return recruiting
 
-# Extract min and max BMI from string
-BMI = [find_between(elem, 'BMI', 'kg') for elem in BMI]
-BMI_min = [elem.split('-')[0] for elem in BMI]
-BMI_max = [elem.split('-')[1] for elem in BMI]
-#BMI_min
-#BMI_max
+study_info_nucleus(study_list)
 
-###---------Weight------------
-# Flatten list of lists
-weight = [item for subl in weight for item in subl]
-# Standardise Weight strings
-weight = [elem.replace('\u202f', ' ') for elem in weight]
-weight = [elem.replace('–', '-') for elem in weight]
-# Extract weight requirement from string
-weight = [find_between(elem, 'Weight ', 'kg') for elem in weight]
-weight
-#weight_min = [elem.split('-')[0] for elem in BMI]
+def requirements( study_list ):
+    healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max = [], [], [], [], [], [], [], [], []
+    study_list = [re.sub('( ?)-( ?)|( ?)–( ?)','-',elem) for elem in study_list]
+    study_list = list(map(str.lower,study_list))
+    for elem in study_list:
+        healthy.append(any(substring in elem for substring in ['healthy']))
+        if (match := re.search('(^| )male', elem) is not None):
+            sex_male.append(True)
+        if (match := re.search('(^| )female', elem) is not None):
+            sex_female.append(True)
+        elem_age_range = elem.split('\n')[1].split('age ')[1].split('years')[0].split('-')
+        age_min.append(elem_age_range[0])
+        if len(elem_age_range) > 1:
+            age_max.append(elem_age_range[-1])
+        else:
+            age_max.append('')
+        elem_bmi = elem.split('\n')[2].split(' kg/m')[0]
+        if 'bmi' in elem_bmi:
+            bmi_range = elem_bmi.split(' ')[-1].split('-')
+            BMI_min.append(bmi_range[0])
+            if len(bmi_range) > 1:
+                BMI_max.append(bmi_range[-1])
+            else:
+                BMI_max.append('')
+        else:
+            BMI_min.append('')
+            BMI_max.append('')
+        if 'weight' in elem:
+            elem_weight_range = find_between(elem, 'weight', 'kg').replace('>','').strip().split('-')#[-1].split('-')
+            weight_min.append(elem_weight_range[0])
+            if len(elem_weight_range) > 1:
+                weight_max.append(elem_weight_range[-1])
+            else:
+                weight_max.append('')
+        else:
+            weight_min.append('')
+            weight_max.append('')
 
-###---------Medical History------------
-# Flatten list of lists
-med_hist = [item for subl in med_hist for item in subl]
-# Extract medical history condition
-med_hist = [elem.split('History ')[1] for elem in med_hist]
-med_hist
+    df = pd.DataFrame(list(zip(healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max)),
+               columns =['healthy', 'sex_male', 'sex_female', 'age_min', 'age_max', 'BMI_min', 'BMI_max', 'weight_min', 'weight_max'])
+
+    return df
+
+requirements(study_list)

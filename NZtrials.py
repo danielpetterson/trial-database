@@ -1,67 +1,8 @@
 import re
 import numpy as np
 import pandas as pd
+from help_funcs import find_between, strip_post_num, strip_pre_colon, total_days
 
-###---Helper Functions---
-def find_between( s, first, last ):
-    try:
-        start = s.index( first ) + len( first )
-        end = s.index( last, start )
-        return s[start:end]
-    except ValueError:
-        return ""
-
-# Remove all text after final digit
-def strip_post_num( col ):
-    lst = []
-    for elem in col.iteritems():
-        if (match := re.search('(^.*\d)', elem[1]) is not None):
-            lst.append(re.search('(^.*\d)', elem[1]).group(1))
-        else:
-            lst.append(elem[1])
-        col = pd.Series(lst)
-    return col
-
-# Remove all text before colon
-def strip_pre_colon( col ):
-    import re
-    lst = []
-    for elem in col.iteritems():
-        if (match := re.search('(:.*)', elem[1]) is not None):
-            string = re.search('(:.*)', elem[1]).group(1)
-            string = string.replace(':','').lstrip().replace('x ',' ')
-            lst.append(string)
-        else:
-            lst.append(elem[1].replace('x ',' '))
-        col = pd.Series(lst)
-    return col
-
-# Calculate total number of days
-def total_days( col ):
-    lst = []
-    for elem in col.iteritems():
-        str = elem[1].strip()
-        if str == 'None':
-            lst.append('0')
-        # Checks for numeric value to avoid errors
-        if match := re.search('(^.*\d)', str) is not None:
-            # Splits on + and carries out any necessary multiplication on either side
-            if len(str.split('+')) > 1:
-                first = str.split('+')[0].replace('x',' ').strip()
-                first = [int(i) for i in first.split()]
-                last = str.split('+')[-1].replace('x',' ').strip()
-                last = [int(i) for i in last.split()]
-                lst.append(np.prod(first)+np.prod(last))
-            # Multiplies first and last numbers in string
-            elif len(str.split()) > 1:
-                lst.append(int(str.split()[0])*int(str.split()[-1]))
-            # Appends original number if there is only one inpatient stay
-            else:
-                lst.append(str)
-        else:
-            lst.append(str)
-        col = pd.Series(lst)
-    return col
 
 def requirements( eligibility_col ):
     healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max = [], [], [], [], [], [], [], [], []
@@ -114,7 +55,7 @@ def requirements( eligibility_col ):
 
 # Auckland Clinical Trial List URL
 acs_url = 'https://www.clinicalstudies.co.nz/participant-info/current-clinical-trials/'
-# Brisbane Nucleus Trial List URL
+# Christchurch Clinical Trial List URL
 ccst_url = 'https://www.ccst.co.nz/study-participants/current-studies/'
 # List must be ordered Auckland then Christchurch
 url_list = [acs_url, ccst_url]
@@ -196,10 +137,13 @@ def nz_df( url_list ):
     nz_df['status'] = nz_df['status'].str.contains('currently recruiting', case=False)
     nz_df.rename(columns = {'status':'recruiting'}, inplace = True)
 
+    nz_df['country'] = 'New Zealand'
+
     study_info = nz_df
     study_requirements = requirements(study_info['eligibility'])
     df = pd.concat([study_info, study_requirements], axis = 1)
 
     return df
 
-    nz_df(url_list)
+###---Test---
+#nz_df(url_list)

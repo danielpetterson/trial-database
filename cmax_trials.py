@@ -103,7 +103,7 @@ def study_info_cmax( url ):
             pars_text.append(line.get_text())
         payment_index = [idx for idx, s in enumerate(pars_text) if '$' in s]
         payment_str = str(pars[payment_index[0]])
-        payment_amount = help_funcs.find_between(payment_str, '$', ' t').strip().split('<')[0]
+        payment_amount = find_between(payment_str, '$', ' t').strip().split('<')[0]
         payment.append(payment_amount)
 
     df['payment'] = payment

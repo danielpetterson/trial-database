@@ -30,7 +30,7 @@ nn_df
 
 # Adelaide Cmax Trial List URL
 cmax_url = 'https://www.cmax.com.au/cmax-current-trials/'
-cmax_df = cmax_trials.study_info_cmax(cmax_url)
+cmax_df = cmax_trials.cmax_df(cmax_url)
 cmax_df
 
 # Combine all Australian Trials

@@ -97,12 +97,14 @@ def nucleus_df( url_list ):
         study_requirements = requirements(study_lines)
         if 'melbourne' in url:
             study_info['city'] = 'Melbourne'
+            study_info['country'] = 'Australia'
             df = pd.concat([study_info, study_requirements], axis=1)
         else:
             study_info['city'] = 'Brisbane'
+            study_info['country'] = 'Australia'
             df_bris = pd.concat([study_info, study_requirements], axis=1)
             df = df.append(df_bris, ignore_index = True)
-        df['country'] = 'Australia'
+
 
     return df
 

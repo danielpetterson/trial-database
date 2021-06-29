@@ -22,7 +22,7 @@ def study_info_cmax( url ):
     # Find index of element at start of trial listings
     indexes = [idx for idx, s in enumerate(study_names_text) if 'CM' in s]
     # Isolate study names and append column to df
-    df['study_names'] = study_names_text[indexes[0]:]
+    df['study_name'] = study_names_text[indexes[0]:]
 
     # Find all span elements for further study details and requirements
     containers = soup.find_all('span')

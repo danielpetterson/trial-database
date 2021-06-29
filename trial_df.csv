@@ -1,0 +1,496 @@
+,study_name,eligibility,recruiting,inpatient,outpatient,payment,city,country,healthy,sex_male,sex_female,age_min,age_max,BMI_min,BMI_max,weight_min,weight_max
+0,Mushu,healthy male and females aged 18-55 years bmi 18-30 kg/m2 weight 60-90kg not taking any restricted medications,True,multiple short in-patient stays,5,8500-1000,Auckland,New Zealand,True,True,True,18,55,18,30,60,90
+1,Hebe,males and females aged 18-55 years weight 60-90 kg and bmi 18.5-30 kg/m2 healthy non-smoker / vaper or smoke no more than 10 cigarettes (or equivalent) per week no meds except hormonal contraceptives,True,2,21,4100,Auckland,New Zealand,True,True,True,18,55,18.5,30,60,90
+2,Firefly,"healthy male and females (surgically sterile or postmenopausal) proportion of chinese, taiwanese, korean ethnicity as well as non-asian participants aged 18-55 years bmi 18-32 kg/m2 non-smoker",True,3,2,2400,Auckland,New Zealand,True,True,True,18,55,18,32,,
+3,Pesto,healthy male and females aged 18-50 years bmi 18-32kg/m2 weight 52-100kg no medications,True,2,13,3500,Auckland,New Zealand,True,True,True,18,50,18,32,52,100
+4,Dart,healthy male and females aged 18-65 years bmi 18.5-30kg/m2 weight >50kg males and >45kg females no medications,True,8,6,4800,Auckland,New Zealand,True,True,True,18,65,18.5,30,50,
+5,Mufasa,healthy male and females (surgically sterile or postmenopausal) aged 18-50 years bmi 18.5-30.0kg/m2 no medications,True,10,19,7000,Auckland,New Zealand,True,True,True,18,50,18.5,30.0,,
+6,Mermaid,healthy male and females aged 18-65 years bmi 18-34.9kg/m2 chinese or caucasian ethnicity no medications,True,3,6,2200,Auckland,New Zealand,True,True,True,18,65,18,34.9,,
+7,Rack,healthy male and females aged 18-80 years. bmi 18.5-35.0 kg/m2,True,0,9,3200,Auckland,New Zealand,True,True,True,18,80,18.5,35.0,,
+8,Bongo,healthy males and females aged 18-50 years weight ≥ 40kg bmi 18-32 kg/m2 no medications,True,11,18,9250,Auckland,New Zealand,True,True,True,18,50,18,32,40,
+9,Estrella,diagnosed pizz alpha-1 antitrypsin deficiency males and females (surgically sterile or postmenopausal) aged 18-70 years.,True,0,11 or 17,2200,Auckland,New Zealand,False,True,True,18,70,,,,
+10,Fiesta,healthy males and females (surgically sterile or post-menopausal) males aged 18-45 years bmi 18-32kg/m2 non-smoker no restricted medications,True,13,1,6000,Auckland,New Zealand,True,True,True,18,45,18,32,,
+11,Rio,"healthy, non-smoking male and females aged 18-55 years bmi 18-32 kg/m2 weigh more than 50 kg no medications",True,6,1,3000,Auckland,New Zealand,True,True,True,18,55,18,32,50,
+12,Hebe,males and females aged 18-55 weight 60-90kg and bmi 18.5-30 kg/m² healthy non-smoker/vaper or smoke no more than 10 cigarettes (or equivalent) per week no meds except oral contraceptives,True,4,2,4800 -  4100,Christchurch,New Zealand,True,True,True,18,55,18.5,30,60,90
+13,Mufasa,healthy males and females (females must be surgically sterile or postmenopausal) aged 18-50 years weight 50-100kg and bmi 18.5-30kg/m² no medications,True,10,2,7000,Christchurch,New Zealand,True,True,True,18,50,18.5,30,50,100
+14,Posie,postmenopausal females aged 40 years + bmi 18.5-34.0 kg/m² in good health,True,1,1,3200,Christchurch,New Zealand,True,False,True,40,,18.5,34.0,,
+15,Buzz,healthy females aged 18-65 years weight 50-100 kg bmi 18-29.9 kg/m2 no medications,True,4,7,2850,Christchurch,New Zealand,True,False,True,18,65,18,29.9,50,100
+16,Kea, males and females aged 18-65 in good health,True,10,4,5500,Christchurch,New Zealand,True,True,True,18,65,,,,
+17,Rack,healthy male and females aged 18-80 years. bmi 18.5-35.0 kg/m2,True,0,9,3200,Christchurch,New Zealand,True,True,True,18,80,18.5,35.0,,
+18,Heart," Biological Sex Healthy males or females
+            Age 18-45 years old
+            BMI 18-32kg/m²
+            Medication Not taking any (contraceptives ok)
+            Medical History Nothing significant
+            Smoking History Social smokers okay (no more than 5 per week)
+            Dietary Restrictions Must be able to consume one high fat breakfast containing bacon, eggs, hash browns and a full glass of plain full cream milk
+             Status  Currently Recruiting Overnight stays 
+            2 x 7 nights Outpatient visits 
+            1 visits  View study details
+              ",True,14,1,,Melbourne,Australia,True,True,True,18,45,18,32,,
+19,Swell," Biological Sex Healthy males or females
+            Age 18-65  years old
+            BMI 18-35 kg/m²
+            Medical History Nothing significant
+            Smoking History Non-smokers (no smoking within the past 3 months)
+             Status  Currently Recruiting Overnight stays 
+            7 nights Outpatient visits 
+            1 + 1 follow up call visits  View study details
+              ",True,7,1 + 1 follow up call,,Melbourne,Australia,True,True,True,18,65,18,35,,
+20,Cluster," Biological Sex Healthy males or females
+            Age 18-55 years old
+            BMI 20-34.9 kg/m²
+            Medication Not taking any
+            Medical History Nothing significant
+            Smoking History Less than 2 per day
+             Status  Currently Recruiting Overnight stays 
+            3 nights Outpatient visits 
+            4 visits  View study details
+              ",True,3,4,,Melbourne,Australia,True,True,True,18,55,20,34.9,,
+21,White cell," Biological Sex Healthy males or females
+            BMI 18-32 kg/m² 
+            Age 18-  55 years old
+            Medication Not taking any 
+            Medical History Nothing significant
+            Smoking History Non-smokers (last 1 month)
+             Status  Currently Recruiting Overnight stays 
+            12 nights Outpatient visits 
+            1 visits  View study details
+              ",True,12,1,,Melbourne,Australia,True,True,True,18, 55,18,32,,
+22,Antibody," Biological Sex Healthy males or females
+            Age 18-50 years old
+            BMI 17.5-32 kg/m²
+            Body Weight 50 kg-100 kg (males) and 45 kg-100 kg (females)
+            Medication Not taking any medication (contraceptives okay)
+            Medical History Nothing significant
+            Smoking History Non-smokers or occasional smokers (no more than 3 cigarettes per week in the past 3 months)
+             Status  Currently Recruiting Overnight stays 
+            4 nights Outpatient visits 
+            5 prior to inpatient stay + 8 follow up visits  View study details
+              ",True,4,5 prior to inpatient stay + 8 follow up,,Melbourne,Australia,True,True,True,18,50,17.5,32,50,
+23,Defend," Biological Sex Healthy males or females
+            Age 18-  55 years old
+            BMI 18-30.5 kg/m²
+            Medical History Nothing significant
+            Smoking History Non-smokers or social smokers (no more than 2 cigarettes per week in the past month)
+             Status  Currently Recruiting Overnight stays 
+            12 nights Outpatient visits 
+            1 visits  View study details
+              ",True,12,1,,Melbourne,Australia,True,True,True,18, 55,18,30.5,,
+24,Healthy liver," Biological Sex Healthy males or females
+            Age 18-60 years old
+            BMI 24-35 kg/m2
+            Weight 60-120kg
+            Medications Not taking any medication (hormonal contraceptives or high blood pressure medication allowed)
+            Medical History No significant medical history
+            Smoking History Non-smokers or light smokers (no more than 2 cigarettes per day and must be able to abstain during the study)
+             Status  Currently Recruiting Overnight stays 
+            5 nights Outpatient visits 
+            3 visits  View study details
+              ",True,5,3,,Melbourne,Australia,True,True,True,18,60,24,35,60,120
+25,Memory," Biological Sex Healthy males or females
+            Age 18-55 years old
+            BMI 18.5-30 kg/m²
+            Weight > 50 kg
+            Medication Not taking any regular medication (paracetamol and contraception permitted)
+            Smoking History No more than 10 cigarettes per week in the past 3 months
+             Status  Currently Recruiting Overnight stays 
+            4 nights Outpatient visits 
+            1 visits  View study details
+              ",True,4,1,,Melbourne,Australia,True,True,True,18,55,18.5,30,50,
+26,Antibody," Biological Sex Healthy males or females
+            Age 18-50 years old
+            BMI 17.5-32 kg/m²
+            Body Weight 45-100kg (females)  50-100kg (males)
+            Medication Not taking any medication (contraceptives okay)
+            Medical History Nothing significant
+            Smoking History Non-smokers or occasional smokers (no more than 3 cigarettes per week in the past 3 months)
+             Status  Currently Recruiting Overnight stays 
+            2 x 4 + 2 x 2 nights Outpatient visits 
+            11 visits  View study details
+              ",True,12,11,,Melbourne,Australia,True,True,True,18,50,17.5,32,45,100
+27,Calming," Biological Sex Healthy males or females
+            Age 18-55 years old
+            BMI 18-32 kg/m²
+            Weight > 50 kg
+            Medication Not taking any
+            Medical History Nothing significant
+            Smoking History Non or light smokers (less than 2 per week)
+             Status  Currently Recruiting Overnight stays 
+            2 x 3 nights Outpatient visits 
+            7 visits  View study details
+              ",True,6,7,,Melbourne,Australia,True,True,True,18,55,18,32,50,
+28,Crossover," Biological Sex Healthy males or females of non-childbearing potential (surgically sterile or post-menopausal)
+            Age 18-50 years old
+            BMI 18.5-30 kg/m²
+            Weight 50-100 kg
+            Medication Not taking any
+            Tattoos Non on the outer upper arms
+            Medical History Nothing significant
+            Smoking History No-smokers
+             Status  Currently Recruiting Overnight stays 
+            2 x 5 nights Outpatient visits 
+            19 visits  View study details
+              ",True,10,19,,Brisbane,Australia,True,True,True,18,50,18.5,30,50,100
+29,Inflammatory," Biological Sex Healthy males or females
+            Age 18-50 years old
+            BMI 18-32 kg/m²
+            Body Weight 60-100 kg
+            Medications Not taking any
+            Medical History Nothing significant
+            Smoking History Non-smokers
+             Status  Currently Recruiting Overnight stays 
+            2 nights Outpatient visits 
+            13 visits  View study details
+              ",True,2,13,,Brisbane,Australia,True,True,True,18,50,18,32,60,100
+30,Similar," Biological Sex Healthy males or females
+            Age 18-55 years
+            BMI 18.5-30.0 kg/m²
+            Body Weight 60-90 kg
+            Medications Not taking any
+            Medical History Nothing significant
+            Smoking History Non smokers and smokers up to 10 cigarettes/week
+             Status  Currently Recruiting Overnight stays 
+            2 nights Outpatient visits 
+            20 visits  View study details
+              ",True,2,20,,Brisbane,Australia,True,True,True,18,55,18.5,30.0,60,90
+31,Similar," Biological Sex Healthy males or females of Japanese descent (was born in Japan and both parents and grandparents are of Japanese origin OR 2nd generation Japanese person living abroad and both parents and grandparents are of Japanese origin)
+            Age 18-55 years
+            BMI 18.5-30.0 kg/m²
+            Body Weight 60-90 kg
+            Medications Not taking any
+            Medical History Nothing significant
+            Smoking History Non smokers and smokers up to 10 cigarettes/week
+             Status  Currently Recruiting Overnight stays 
+            2 nights Outpatient visits 
+            20 visits  View study details
+              ",True,2,20,,Brisbane,Australia,True,True,True,18,55,18.5,30.0,60,90
+32,Complement," Biological Sex Healthy males or females
+            Age 18-65 years old
+            BMI 17-30 kg/m²
+            Medication Not taking any (contraception is permitted)
+            Medical History Nothing significant
+            Smoking History Non smoker, or light smoker (& able to abstain 24 hours prior to and during inpatient stay)
+             Status  Currently Recruiting Overnight stays 
+            5 nights Outpatient visits 
+            12 visits  View study details
+              ",True,5,12,,Brisbane,Australia,True,True,True,18,65,17,30,,
+33,Breathless," Biological Sex Healthy males or females
+            Age 18-55 years old
+            BMI 18-30 kg/m²
+            Weight >45 kg
+            Medications Not taking any (contraception allowed)
+            Medical History Nothing significant
+            Smoking History Non smokers or smokers of less than 5 cigarettes per day
+             Status  Currently Recruiting Overnight stays 
+            6 nights Outpatient visits 
+            10 visits  View study details
+              ",True,6,10,,Brisbane,Australia,True,True,True,18,55,18,30,45,
+34,Motor," Biological Sex Healthy males and females of non-childbearing potential (post-menopausal or surgically sterile)
+            Age 18-55 years old
+            BMI 18-32 kg/m²
+            Weight > 50 kg
+            Medications Not taking any
+            Medical History Nothing significant
+            Smoking History Non smokers or occasional smokers (no more than 2 cigarettes per week)
+             Status  Currently Recruiting Overnight stays 
+            2 nights Outpatient visits 
+            5 visits  View study details
+              ",True,2,5,,Brisbane,Australia,True,True,True,18,55,18,32,50,
+35,Covid-19 vaccine," Biological Sex Healthy males or females
+            Age 18-60 years old
+            BMI 18-32 kg/m²
+            Weight > 50 kg
+            Medication Not taking any
+            Medical History Nothing significant
+            Smoking History Non smokers & casual smokers of up to 2 cigarettes per week
+             Status  Currently Recruiting Overnight stays 
+            0 nights Outpatient visits 
+            7 visits  View study details
+              ",True,0,7,,Brisbane,Australia,True,True,True,18,60,18,32,50,
+36,Regulator," Biological Sex Healthy Males or Females
+            Age 18-65 years old
+            BMI 18-34 kg/m²
+            Weight >45kg
+            Medication Not taking any (contraceptives permitted)
+            Medical History Nothing significant
+            Smoking History Non smokers or mild smokers (< 10 cigaretts/day)
+             Status  Currently Recruiting Overnight stays 
+            2x2 + 2x1 nights Outpatient visits 
+            7 visits  View study details
+              ",True,6,7,,Brisbane,Australia,True,True,True,18,65,18,34,45,
+37,Interaction," Biological Sex Healthy males or females
+            Age 18-55 years old
+            BMI 18-28 kg/m²
+            Medications Not taking any
+            Medical History Nothing significant
+            Smoking History No smoking in past 90 days
+             Status  Currently Recruiting Overnight stays 
+            9 nights Outpatient visits 
+            1 visits  View study details
+              ",True,9,1,,Brisbane,Australia,True,True,True,18,55,18,28,,
+38,CM4721," Males and females aged 18 to 45 years
+BMI must be between 19 to 30kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,21,1,5390,Adelaide,Australia,True,True,True,18,45 ,19,30,,
+39,CM1520 Part A2," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,8,1,3200,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+40,CM4020 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,17,1,6530,Adelaide,Australia,True,True,True,18,55 ,18,30,,
+41,CM4921 C3," Males and females aged 18 to 65 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,6,10,3820,Adelaide,Australia,True,True,True,18,65 ,18,32, 50,
+42,CM2820," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential 
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,1,1180,Adelaide,Australia,True,True,True,18,65 ,18,32,,
+43,CM5619," Males and females aged 18 to 49 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 55kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,7,3440,Adelaide,Australia,True,True,True,18,49 ,18,30, 55,
+44,CM5021," Males and females aged 18 to 60 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,20,1,6360,Adelaide,Australia,True,True,True,18,60 ,18,30,,
+45,CM5121," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,0,1090,Adelaide,Australia,True,True,True,18,55 ,18,32, 50,
+46,CM8820 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-smokers
+No dietary requirements ",True,19,1,6330,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+47,CM3820," Males and females aged 18 to 65 years
+BMI must be between 18 to 30kg/m²
+Body weight must be between 40 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers ",True,30,1,8340,Adelaide,Australia,True,True,True,18,65 ,18,30,40,100
+48,CM3620," Males and females aged 18 to 60 years
+BMI must be between 18 to 32kg/m²
+Body weight must be 50kg or above
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,5,1,2030,Adelaide,Australia,True,True,True,18,60 ,18,32,50,
+49,CM4220," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be between 76 to 111kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 6 weeks prior
+No significant allergies
+Non-Smokers ",True,20,4,9500,Adelaide,Australia,True,True,True,18,55 ,18,32,76,111
+50,CM3420," Males and females aged 18 to 65 years
+BMI must be between 27 to 40kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,5,2150,Adelaide,Australia,True,True,True,18,65 ,27,40,,
+51,CM7417," Males and females aged 18 to 50 years
+Must not have had a previous meningococcal vaccine 
+BMI must be below 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+No blood donation 2 months prior
+No significant allergies ",True,0,4-5,400–500,Adelaide,Australia,True,True,True,18,50 ,,32, 50,
+52,CM9720," Males and females aged 18 to 50 years
+BMI must be between 18 to 32kg/m²
+Body weight must be between 50 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Light smokers allowed
+No dietary requirements ",True,2,13,4180,Adelaide,Australia,True,True,True,18,50 ,18,32,50,100
+53,CM0120," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential
+BMI must be between 18 to 32kg/m²
+Must have elevated lipoprotein(a) (high cholesterol) 
+Medication criteria applies
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,0,19,2280,Adelaide,Australia,False,True,True,18,65 ,18,32,,
+54,CM1220," Females aged 18 to 65 years
+BMI must be between 18 to 33kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 week prior
+No significant allergies
+Light smokers allowed ",True,2,1,1200,Adelaide,Australia,True,False,True,18,65 ,18,33, 50,
+55,CM8420 P2," Males only aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be between 50 to 120kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-smokers
+No dietary requirements ",True,3,1,1540,Adelaide,Australia,True,True,False,18,55 ,18,30,50,120
+56,CM4419," Males and females aged 18 to 65 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,6,3,3320,Adelaide,Australia,True,True,True,18,65 ,18,30,,
+57,CM4621," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential (surgically sterile or post-menopausal)
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications
+No significant allergies
+Non-Smokers ",True,3,1,1280,Adelaide,Australia,True,True,True,18,65 ,18,32,,
+58,CM3220," Males and females aged 18 to 64 years
+BMI must be between 19 to 31kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,5,1,1810,Adelaide,Australia,True,True,True,18,64 ,19,31,,
+59,CM4921," Males and females aged 18 to 65 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,6,2120,Adelaide,Australia,True,True,True,18,65 ,18,32, 50,
+60,CM8920 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 55kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers ",True,6,5,3150,Adelaide,Australia,True,True,True,18,55 ,18,32, 55,
+61,CM1720," Males and females aged 18 to 55 years
+Females must be of non-childbearing potential
+BMI must be between 18.5 to 29.9kg/m²
+Body weight must be between 55 to 100kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Light smokers allowed (no smoking while in-house)
+No dietary requirements  ",True,6,0,2190,Adelaide,Australia,True,True,True,18,55 ,18.5,29.9,55,100
+62,CM2420," Males and females aged 18 to 55 years
+Females must be of non-childbearing potential (surgically sterile or post-menopausal) 
+BMI must be between 18 to 30kg/m²
+Body weight must be between 45 to 100kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,2,2,1300,Adelaide,Australia,True,True,True,18,55 ,18,30,45,100
+63,CM2520 Part A," Males and females aged 18 to 45 years
+BMI must be between 19 to 33kg/m²
+Body weight must be between 45 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,4,5,2930,Adelaide,Australia,True,True,True,18,45 ,19,33,45,100
+64,CM1520," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers ",True,3,1,1450,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+65,CM1020," Males only 18 to 50 years
+BMI must be between 19 to 29 kg/m²
+Body weight must be at least 50kg 
+Must be in good general health
+Must not be taking any medications 
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,10,3600,Adelaide,Australia,True,True,False,18,50 ,19,29, 50,
+66,CM5819 Part B," Males and females aged 18 to 60 years
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 3 months prior
+No significant allergies
+Light smokers allowed
+No dietary requirements ",True,6,8,4510,Adelaide,Australia,True,True,True,18,60 ,18,32,,
+67,CM1120," Males and females aged 18 to 65 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,7,12,5140,Adelaide,Australia,True,True,True,18,65 ,18,30,,
+68,CM6819 Part B," Males and females aged 18 to 59 years
+BMI must be between 18.5 to 30kg/m²
+Males body weight must be above 50kg
+Females body weight must be above 45kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers  
+",True,10,1,3300,Adelaide,Australia,True,True,True,18,59 ,18.5,30, 50,
+69,CM0420," Males and females aged 18 to 55 years
+Body weight must be between 40 to 120kg
+Must be in good general health
+Must not be taking any medications
+No significant allergies
+Social smokers allowed ",True,4,4,2980,Adelaide,Australia,True,True,True,18,55 ,,,40,120
+70,CM0620," Males and females aged 18 to 65 years
+Must have diagnosed moderate to severe Atopic Dermatitis for a minimum of 1 year
+Medication restrictions apply
+Must be in good general health ",True,0,10,2610,Adelaide,Australia,True,True,True,18,65 ,,,,

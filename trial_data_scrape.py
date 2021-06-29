@@ -13,7 +13,6 @@ acs_url = 'https://www.clinicalstudies.co.nz/participant-info/current-clinical-t
 ccst_url = 'https://www.ccst.co.nz/study-participants/current-studies/'
 # List must be ordered Auckland then Christchurch
 nz_url_list = [acs_url, ccst_url]
-
 nz_trials = NZtrials.nz_df(nz_url_list)
 
 
@@ -26,16 +25,16 @@ bris_url = 'https://www.nucleusnetwork.com/au/participate-in-a-trial/brisbane-cl
 nn_url_list = [melb_url, bris_url]
 # Generate dataframe
 nn_df = nucleus_trials.nucleus_df(nn_url_list)
-nn_df
 
 # Adelaide Cmax Trial List URL
 cmax_url = 'https://www.cmax.com.au/cmax-current-trials/'
 cmax_df = cmax_trials.cmax_df(cmax_url)
-cmax_df
 
 # Combine all Australian Trials
 aus_trials = nn_df.append(cmax_df, ignore_index = True)
-aus_trials
 
 df = nz_trials.append(aus_trials, ignore_index = True)
-df
+
+df.to_csv('trial_df.csv')
+# Check for NAs
+df.isna().sum()

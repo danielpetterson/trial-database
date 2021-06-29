@@ -26,13 +26,16 @@ bris_url = 'https://www.nucleusnetwork.com/au/participate-in-a-trial/brisbane-cl
 nn_url_list = [melb_url, bris_url]
 # Generate dataframe
 nn_df = nucleus_trials.nucleus_df(nn_url_list)
+nn_df
 
 # Adelaide Cmax Trial List URL
 cmax_url = 'https://www.cmax.com.au/cmax-current-trials/'
 cmax_df = cmax_trials.study_info_cmax(cmax_url)
+cmax_df
 
 # Combine all Australian Trials
 aus_trials = nn_df.append(cmax_df, ignore_index = True)
+aus_trials
 
 df = nz_trials.append(aus_trials, ignore_index = True)
 df

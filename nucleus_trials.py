@@ -27,7 +27,6 @@ def study_info_nucleus( study_list ):
                columns =['study_name', 'eligibility', 'recruiting', 'inpatient', 'outpatient', 'payment'])
 
     df['inpatient'] = total_days(df['inpatient'])
-    df['country'] = 'Australia'
 
     return df
 
@@ -103,6 +102,7 @@ def nucleus_df( url_list ):
             study_info['city'] = 'Brisbane'
             df_bris = pd.concat([study_info, study_requirements], axis=1)
             df = df.append(df_bris, ignore_index = True)
+        df['country'] = 'Australia'
 
     return df
 

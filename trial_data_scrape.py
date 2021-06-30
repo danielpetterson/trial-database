@@ -32,9 +32,10 @@ cmax_df = cmax_trials.cmax_df(cmax_url)
 
 # Combine all Australian Trials
 aus_trials = nn_df.append(cmax_df, ignore_index = True)
-
+# Master dataframe
 df = nz_trials.append(aus_trials, ignore_index = True)
-
-df.to_csv('trial_df.csv')
 # Check for NAs
-df.isna().sum()
+if df.isna().sum().sum() > 0:
+    print("NAs found. Check dataframe!")
+# Export to json on Pages
+df.to_json('/Users/danielpetterson/Documents/GitHub/danielpetterson.github.io/assets/trial_data/trial_df.json', orient='records')

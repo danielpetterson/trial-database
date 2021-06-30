@@ -5,6 +5,7 @@ from help_funcs import find_between, strip_post_num, strip_pre_colon, total_days
 
 
 def requirements( eligibility_col ):
+    eligibility_col = eligibility_col.str.lower().replace('(^| )women ',' females ', regex=True).replace('(^| )men ',' males ', regex=True)
     healthy, sex_male, sex_female, age_min, age_max, BMI_min, BMI_max, weight_min, weight_max = [], [], [], [], [], [], [], [], []
     for elem in eligibility_col:
         elem = elem.lower()
@@ -100,7 +101,6 @@ def nz_df( url_list ):
     nz_df['study_name']=[val for val in nz_df['study_name'].str.capitalize()]
 
     nz_df = nz_df.replace('( ?)-( ?)|( ?)–( ?)','-', regex=True)
-    nz_df['eligibility'] = nz_df['eligibility'].str.lower().replace('(^| )women ',' females ', regex=True).replace('(^| )men ',' males ', regex=True)
 
     nz_df['payment'] = [re.search('(\$.*\d)', elem).group(1) for elem in nz_df['payment']]
 
@@ -146,4 +146,4 @@ def nz_df( url_list ):
     return df
 
 ###---Test---
-#nz_df(url_list)
+nz_df(url_list)

@@ -34,8 +34,47 @@ cmax_df = cmax_trials.cmax_df(cmax_url)
 aus_trials = nn_df.append(cmax_df, ignore_index = True)
 # Master dataframe
 df = nz_trials.append(aus_trials, ignore_index = True)
+# Replace empty string with NaNs
+df = df.replace(r'^\s*$', np.NaN, regex=True)
+
 # Check for NAs
 if df.isna().sum().sum() > 0:
     print("NAs found. Check dataframe!")
+    print(df.isna().sum())
+
+df.study_name.fillna("Unknown", inplace=True)
+df.eligibility.fillna("Unknown", inplace=True)
+df.recruiting.fillna(True, inplace=True)
+df.inpatient.fillna(0, inplace=True)
+df.outpatient.fillna(0, inplace=True)
+df.payment.fillna("Unknown", inplace=True)
+df.healthy.fillna(True, inplace=True)
+df.sex_male.fillna(True, inplace=True)
+df.sex_female.fillna(True, inplace=True)
+df.age_min.fillna(18, inplace=True)
+df.age_max.fillna(99, inplace=True)
+df.BMI_min.fillna(16, inplace=True)
+df.BMI_max.fillna(40, inplace=True)
+df.weight_min.fillna(40, inplace=True)
+df.weight_max.fillna(200, inplace=True)
+
+df.dtypes
+
+# Convert series type
+df = df.astype(str)
+
+#df['recruiting'] = pd.to_bool(df['recruiting'], errors='coerce').fillna(True).astype('bool')
+df['inpatient'] = pd.to_numeric(df['inpatient'], errors='coerce').fillna(0).astype('int')
+df['outpatient'] = pd.to_numeric(df['outpatient'], errors='coerce').fillna(0).astype('int')
+df['age_min'] = pd.to_numeric(df['age_min'], errors='coerce').fillna(18).astype('int')
+df['age_max'] = pd.to_numeric(df['age_max'], errors='coerce').fillna(99).astype('int')
+df['BMI_min'] = pd.to_numeric(df['BMI_min'], errors='coerce').fillna(16).astype('int')
+df['BMI_max'] = pd.to_numeric(df['BMI_max'], errors='coerce').fillna(40).astype('int')
+df['weight_min'] = pd.to_numeric(df['weight_min'], errors='coerce').fillna(40).astype('int')
+df['weight_max'] = pd.to_numeric(df['weight_max'], errors='coerce').fillna(200).astype('int')
+
+df['id'] = df.index.astype(str)
+
+#df
 # Export to json on Pages
 df.to_json('/Users/danielpetterson/Documents/GitHub/danielpetterson.github.io/assets/trial_data/trial_df.json', orient='records')

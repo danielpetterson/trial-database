@@ -36,13 +36,15 @@ if __name__ == '__main__':
     aus_trials = nn_df.append(cmax_df, ignore_index = True)
     # Master dataframe
     df = nz_trials.append(aus_trials, ignore_index = True)
-    # Replace empty string with NaNs
-    df = df.replace(r'^\s*$', np.NaN, regex=True)
+
 
     # Check for NAs
     if df.isna().sum().sum() > 0:
         print("NAs found. Check dataframe!")
         print(df.isna().sum())
+
+    # Replace empty string with NaNs
+    df = df.replace(r'^\s*$', np.NaN, regex=True)
 
     df.study_name.fillna("Unknown", inplace=True)
     df.eligibility.fillna("Unknown", inplace=True)
@@ -83,7 +85,7 @@ if __name__ == '__main__':
 
     # Save JSON locally
     df.to_json('/Users/danielpetterson/Documents/trial_app_data/trial_df.json', orient='records')
-
+    print('Success')
 #
 # import git
 #

@@ -1,0 +1,266 @@
+study_name,eligibility,recruiting,inpatient,outpatient,payment,city,country,healthy,sex_male,sex_female,age_min,age_max,BMI_min,BMI_max,weight_min,weight_max
+CM4721," Males and females aged 18 to 45 years
+BMI must be between 19 to 30kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,21,1,5390,Adelaide,Australia,True,True,True,18,45 ,19,30,,
+CM1520 Part A2," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,8,1,3200,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+CM4020 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,17,1,6530,Adelaide,Australia,True,True,True,18,55 ,18,30,,
+CM2820," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential 
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,1,1180,Adelaide,Australia,True,True,True,18,65 ,18,32,,
+CM5619," Males and females aged 18 to 49 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 55kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,7,3440,Adelaide,Australia,True,True,True,18,49 ,18,30, 55,
+CM5021," Males and females aged 18 to 60 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,20,1,6360,Adelaide,Australia,True,True,True,18,60 ,18,30,,
+CM5121," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,0,1090,Adelaide,Australia,True,True,True,18,55 ,18,32, 50,
+CM8820 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-smokers
+No dietary requirements ",True,19,1,6330,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+CM3820," Males and females aged 18 to 65 years
+BMI must be between 18 to 30kg/m²
+Body weight must be between 40 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers ",True,30,1,8340,Adelaide,Australia,True,True,True,18,65 ,18,30,40,100
+CM3620," Males and females aged 18 to 60 years
+BMI must be between 18 to 32kg/m²
+Body weight must be 50kg or above
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,5,1,2030,Adelaide,Australia,True,True,True,18,60 ,18,32,50,
+CM4220," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be between 76 to 111kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 6 weeks prior
+No significant allergies
+Non-Smokers ",True,20,4,9500,Adelaide,Australia,True,True,True,18,55 ,18,32,76,111
+CM3420," Males and females aged 18 to 65 years
+BMI must be between 27 to 40kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,5,2150,Adelaide,Australia,True,True,True,18,65 ,27,40,,
+CM7417," Males and females aged 18 to 50 years
+Must not have had a previous meningococcal vaccine 
+BMI must be below 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+No blood donation 2 months prior
+No significant allergies ",True,0,4-5,400–500,Adelaide,Australia,True,True,True,18,50 ,,32, 50,
+CM9720," Males and females aged 18 to 50 years
+BMI must be between 18 to 32kg/m²
+Body weight must be between 50 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Light smokers allowed
+No dietary requirements ",True,2,13,4180,Adelaide,Australia,True,True,True,18,50 ,18,32,50,100
+CM0120," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential
+BMI must be between 18 to 32kg/m²
+Must have elevated lipoprotein(a) (high cholesterol) 
+Medication criteria applies
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,0,19,2280,Adelaide,Australia,False,True,True,18,65 ,18,32,,
+CM1220," Females aged 18 to 65 years
+BMI must be between 18 to 33kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 week prior
+No significant allergies
+Light smokers allowed ",True,2,1,1200,Adelaide,Australia,True,False,True,18,65 ,18,33, 50,
+CM8420 P2," Males only aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be between 50 to 120kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Non-smokers
+No dietary requirements ",True,3,1,1540,Adelaide,Australia,True,True,False,18,55 ,18,30,50,120
+CM4621," Males and females aged 18 to 65 years
+Females must be of non-childbearing potential (surgically sterile or post-menopausal)
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications
+No significant allergies
+Non-Smokers ",True,3,1,1280,Adelaide,Australia,True,True,True,18,65 ,18,32,,
+CM3220," Males and females aged 18 to 64 years
+BMI must be between 19 to 31kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,5,1,1810,Adelaide,Australia,True,True,True,18,64 ,19,31,,
+CM4921," Males and females aged 18 to 65 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,3,6,2120,Adelaide,Australia,True,True,True,18,65 ,18,32, 50,
+CM8920 Part B," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 55kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers ",True,6,5,3150,Adelaide,Australia,True,True,True,18,55 ,18,32, 55,
+CM1720," Males and females aged 18 to 55 years
+Females must be of non-childbearing potential
+BMI must be between 18.5 to 29.9kg/m²
+Body weight must be between 55 to 100kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 2 months prior
+No significant allergies
+Light smokers allowed (no smoking while in-house)
+No dietary requirements  ",True,6,0,2190,Adelaide,Australia,True,True,True,18,55 ,18.5,29.9,55,100
+CM2420," Males and females aged 18 to 55 years
+Females must be of non-childbearing potential (surgically sterile or post-menopausal) 
+BMI must be between 18 to 30kg/m²
+Body weight must be between 45 to 100kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,2,2,1300,Adelaide,Australia,True,True,True,18,55 ,18,30,45,100
+CM2520 Part A," Males and females aged 18 to 45 years
+BMI must be between 19 to 33kg/m²
+Body weight must be between 45 to 100kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers ",True,4,5,2930,Adelaide,Australia,True,True,True,18,45 ,19,33,45,100
+CM1520," Males and females aged 18 to 55 years
+BMI must be between 18 to 30kg/m²
+Body weight must be above 50kg
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 1 month prior
+No significant allergies
+Non-Smokers ",True,3,1,1450,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
+CM1020," Males only 18 to 50 years
+BMI must be between 19 to 29 kg/m²
+Body weight must be at least 50kg 
+Must be in good general health
+Must not be taking any medications 
+No blood donation 2 months prior
+No significant allergies
+Non-Smokers ",True,3,10,3600,Adelaide,Australia,True,True,False,18,50 ,19,29, 50,
+CM5819 Part B," Males and females aged 18 to 60 years
+BMI must be between 18 to 32kg/m²
+Must be in good general health
+Must not be taking any medications
+No blood donation 3 months prior
+No significant allergies
+Light smokers allowed
+No dietary requirements ",True,6,8,4510,Adelaide,Australia,True,True,True,18,60 ,18,32,,
+CM1120," Males and females aged 18 to 65 years
+BMI must be between 18 to 30kg/m²
+Must be in good general health
+Must not be taking any medications (other than contraception)
+No blood donation 3 months prior
+No significant allergies
+Non-Smokers
+No dietary requirements ",True,7,12,5140,Adelaide,Australia,True,True,True,18,65 ,18,30,,
+CM6819 Part B," Males and females aged 18 to 59 years
+BMI must be between 18.5 to 30kg/m²
+Males body weight must be above 50kg
+Females body weight must be above 45kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers  
+",True,10,1,3300,Adelaide,Australia,True,True,True,18,59 ,18.5,30, 50,
+CM0420," Males and females aged 18 to 55 years
+Body weight must be between 40 to 120kg
+Must be in good general health
+Must not be taking any medications
+No significant allergies
+Social smokers allowed ",True,4,4,2980,Adelaide,Australia,True,True,True,18,55 ,,,40,120
+CM0620," Males and females aged 18 to 65 years
+Must have diagnosed moderate to severe Atopic Dermatitis for a minimum of 1 year
+Medication restrictions apply
+Must be in good general health ",True,0,10,2610,Adelaide,Australia,True,True,True,18,65 ,,,,
+CM3019," Males and females aged 18 to 55 years
+BMI must be between 18 to 32kg/m²
+Body weight must be above 55kg
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers ",True,8,4,3320,Adelaide,Australia,True,True,True,18,55 ,18,32, 55,
+CM0720," Males and females aged 18 to 55 years
+BMI must be between 18 to 35kg/m²
+Body weight must be above 45kg 
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers ",True,6,8,4350,Adelaide,Australia,True,True,True,18,55 ,18,35, 45,

@@ -37,6 +37,8 @@ if __name__ == '__main__':
     # Master dataframe
     df = nz_trials.append(aus_trials, ignore_index = True)
 
+    # Formatting
+    df['eligibility'] = df['eligibility'].replace('( ?)\n( ?)','\n• ', regex=True)
 
     # Check for NAs
     if df.isna().sum().sum() > 0:

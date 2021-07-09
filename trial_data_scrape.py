@@ -88,10 +88,16 @@ if __name__ == '__main__':
     #df
     # Export to json on Pages
     df.to_json('/Users/danielpetterson/Documents/GitHub/danielpetterson.github.io/assets/trial_data/trial_df.json', orient='records')
-
-    # Save JSON locally
-    df.to_json('/Users/danielpetterson/Documents/trial_app_data/trial_df.json', orient='records')
+    # Subset columns
+    df_hist = df[['study_name', 'inpatient', 'outpatient', 'payment', 'city', 'country']]
+    # Read in historical file
+    df_hist_old = pd.read_json('/Users/danielpetterson/Documents/trial_app_data/trial_hist_df.json')
+    # Rowbind and drop later duplicates
+    df_hist = pd.concat([df_hist_old,df_hist]).drop_duplicates(keep='first')
+    # Save JSON of all trials locally
+    df_hist.to_json('/Users/danielpetterson/Documents/trial_app_data/trial_hist_df.json', orient='records')
     print('Success')
+
 #
 # import git
 #

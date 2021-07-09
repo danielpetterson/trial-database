@@ -172,5 +172,4 @@ def nz_df( url_list ):
     return df
 
 ###---Test---
-df = nz_df(url_list)
-df.eligibility[0]
+#nz_df(url_list)

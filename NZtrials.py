@@ -1,3 +1,5 @@
+import urllib.request
+from bs4 import BeautifulSoup
 import re
 import numpy as np
 import pandas as pd
@@ -69,6 +71,17 @@ def nz_df( url_list ):
     # Rename columns and append city
     header = ('study_name', 'eligibility', 'status', 'inpatient', 'outpatient', 'payment')
     acs_df.columns = header
+
+    # Extract eligibility study_requirements
+    html = urllib.request.urlopen(url_list[0])
+    soup_acs = BeautifulSoup(html, 'html.parser')
+    containers = soup_acs.find_all('td', {"class": "column-2"})
+    elig = []
+    for line in containers:
+        elig.append(line.get_text())
+    acs_df['eligibility'] = elig
+
+    # Assign City
     acs_df['city'] = 'Auckland'
 
     ###---Christchurch---
@@ -87,6 +100,19 @@ def nz_df( url_list ):
     ccst_df.drop(['Dates', 'Study Visits', 'Reimbursement'], axis=1, inplace=True)
     # Rename columns to align with Auckland layout
     ccst_df.columns = header
+    # Locate strings containing eligibility info
+    html = urllib.request.urlopen(url_list[1])
+    soup_ccst = BeautifulSoup(html, 'html.parser')
+    containers = soup_ccst.find_all('ul')
+    eligibility = []
+    for line in containers:
+        eligibility.append(line.get_text())
+    # Remove first two characters
+    eligibility = [e[1:] for e in eligibility]
+    # Locate indices of page elements
+    indexes = [idx for idx, s in enumerate(eligibility) if 'Home\nAbout' in s]
+    # Isolate study names and append column to df
+    ccst_df['eligibility'] = eligibility[(indexes[0]+5):(indexes[-1]-1)]
     # Append city
     ccst_df['city'] = 'Christchurch'
 
@@ -137,6 +163,10 @@ def nz_df( url_list ):
     nz_df['status'] = nz_df['status'].str.contains('currently recruiting', case=False)
     nz_df.rename(columns = {'status':'recruiting'}, inplace = True)
 
+    # Remove trailing line breaks
+    nz_df['eligibility'] = nz_df['eligibility'].replace('(\\n$)','', regex=True)
+    nz_df['eligibility'] = nz_df['eligibility'].replace('(\\n$)','', regex=True)
+
     nz_df['country'] = 'New Zealand'
 
     study_info = nz_df
@@ -146,4 +176,5 @@ def nz_df( url_list ):
     return df
 
 ###---Test---
-nz_df(url_list)
+df = nz_df(url_list)
+df.eligibility[0]

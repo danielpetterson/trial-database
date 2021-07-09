@@ -7,14 +7,6 @@ Must not be taking any medications (other than contraception)
 No blood donation 3 months prior
 No significant allergies
 Non-Smokers ",True,9,1,3860,Adelaide,Australia,True,True,True,18,55 ,18,30, 50,
-CM4621 FE," Males and females aged 18 to 65 years
-Females must be of non-childbearing potential (surgically sterile or post-menopausal)
-BMI must be between 18 to 32kg/m²
-Must be in good general health
-Must not be taking any medications
-No significant allergies
-Non-Smokers
-No dietary requirements ",True,9,1,2990,Adelaide,Australia,True,True,True,18,65 ,18,32,,
 CM4721," Males and females aged 18 to 45 years
 BMI must be between 19 to 30kg/m²
 Must be in good general health
@@ -263,3 +255,11 @@ CM0620," Males and females aged 18 to 65 years
 Must have diagnosed moderate to severe Atopic Dermatitis for a minimum of 1 year
 Medication restrictions apply
 Must be in good general health ",True,0,10,2610,Adelaide,Australia,True,True,True,18,65 ,,,,
+CM0720," Males and females aged 18 to 55 years
+BMI must be between 18 to 35kg/m²
+Body weight must be above 45kg 
+Must be in good general health
+Must not be taking any medications
+No blood donation 1 month prior
+No significant allergies
+Non-smokers ",True,6,8,4350,Adelaide,Australia,True,True,True,18,55 ,18,35, 45,

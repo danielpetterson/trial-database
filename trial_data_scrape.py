@@ -38,7 +38,7 @@ if __name__ == '__main__':
     df = nz_trials.append(aus_trials, ignore_index = True)
 
     # Formatting
-    df['eligibility'] = df['eligibility'].replace('( ?)\n( ?)','\n• ', regex=True)
+    df['eligibility'] = '• ' + df['eligibility'].replace('(\s?\\n\s*)',' \n• ', regex=True)
 
     # Check for NAs
     if df.isna().sum().sum() > 0:
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     df['weight_min'] = pd.to_numeric(df['weight_min'], errors='coerce').fillna(40).astype('int')
     df['weight_max'] = pd.to_numeric(df['weight_max'], errors='coerce').fillna(200).astype('int')
 
-    df['id'] = df.index.astype(str)
+    df['id'] = df.index
 
     #df
     # Export to json on Pages

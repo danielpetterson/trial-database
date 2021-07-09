@@ -28,6 +28,7 @@ def study_info_nucleus( study_list ):
 
     df['inpatient'] = total_days(df['inpatient'])
 
+
     return df
 
 def requirements( study_list ):
@@ -105,8 +106,20 @@ def nucleus_df( url_list ):
             df_bris = pd.concat([study_info, study_requirements], axis=1)
             df = df.append(df_bris, ignore_index = True)
 
+    # Formatting
+    df['eligibility'] = df['eligibility'].replace('Sex','Sex:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Age','Age:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('BMI','BMI:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Weight','Weight:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Medication','Medication:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('History','History:', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Status\s*','', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Overnight stays\s*\\n\s*','\n Inpatient: ', regex=True)
+    df['eligibility'] = df['eligibility'].replace('Outpatient visits\s*\\n\s*','\n Outpatient: ', regex=True)
+    df['eligibility'] = df['eligibility'].replace('View.*\\n','', regex=True)
+    df['eligibility'] = df['eligibility'].str.strip()
 
     return df
 
 ###---Test---
-#nucleus_df(url_list)
+#df = nucleus_df(url_list)

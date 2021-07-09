@@ -163,10 +163,6 @@ def nz_df( url_list ):
     nz_df['status'] = nz_df['status'].str.contains('currently recruiting', case=False)
     nz_df.rename(columns = {'status':'recruiting'}, inplace = True)
 
-    # Remove trailing line breaks
-    nz_df['eligibility'] = nz_df['eligibility'].replace('(\\n$)','', regex=True)
-    nz_df['eligibility'] = nz_df['eligibility'].replace('(\\n$)','', regex=True)
-
     nz_df['country'] = 'New Zealand'
 
     study_info = nz_df

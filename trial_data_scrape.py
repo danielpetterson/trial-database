@@ -38,6 +38,10 @@ if __name__ == '__main__':
     df = nz_trials.append(aus_trials, ignore_index = True)
 
     # Formatting
+    ## Remove trailing line breaks
+    df['eligibility'] = df['eligibility'].replace('(\\n$)','', regex=True)
+    df['eligibility'] = df['eligibility'].replace('(\\n$)','', regex=True)
+    ## Add bullet point to start of each line
     df['eligibility'] = '• ' + df['eligibility'].replace('(\s?\\n\s*)',' \n• ', regex=True)
 
     # Check for NAs

@@ -41,7 +41,7 @@ if __name__ == '__main__':
     ## Remove trailing line breaks
     df['eligibility'] = df['eligibility'].replace('(\\n$)','', regex=True)
     df['eligibility'] = df['eligibility'].replace('(\\n$)','', regex=True)
-    ## Add bullet point to start of each line
+    # Add bullet point to start of each line
     df['eligibility'] = '• ' + df['eligibility'].replace('(\s?\\n\s*)',' \n• ', regex=True)
 
     # Check for NAs
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
     #df
     # Export to json on Pages
-    df.to_json('/Users/danielpetterson/Documents/GitHub/danielpetterson.github.io/assets/trial_data/trial_df.json', orient='records')
+    df.to_json('/Users/danielpetterson/Documents/GitHub/danielpetterson.github.io/assets/trial_data/trial_df_test.json', orient='records')
     # Subset columns
     df_hist = df[['study_name', 'inpatient', 'outpatient', 'payment', 'city', 'country']]
     # Read in historical file

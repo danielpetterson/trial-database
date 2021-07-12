@@ -35,6 +35,7 @@ def study_info_cmax( url ):
     elig_list = [text[i] for i in indexes_eligibility]
     elig_list = [re.sub('\n\n',' ',elem) for elem in elig_list]
     df['eligibility'] = elig_list
+    df['eligibility'] = df['eligibility'].str.strip()
     df['recruiting'] = True
 
     ###---Inpatient and outpatient duration---
@@ -178,4 +179,4 @@ def cmax_df( url ):
 
     return df
 
-#cmax_df(url)
+cmax_df(url)

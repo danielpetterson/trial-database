@@ -122,6 +122,8 @@ def nz_df( url_list ):
 
     # Rowbind dataframes
     nz_df = pd.concat([acs_df,ccst_df], ignore_index=True)
+    # Set all series to strings for manipulation
+    nz_df = nz_df.astype(str)
     # Standardise study names
     nz_df['study_name']=[val[0] for val in nz_df['study_name'].str.split(' ')]
     nz_df['study_name']=[val for val in nz_df['study_name'].str.capitalize()]
@@ -172,4 +174,4 @@ def nz_df( url_list ):
     return df
 
 ###---Test---
-#nz_df(url_list)
+nz_df(url_list)

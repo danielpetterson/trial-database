@@ -175,7 +175,7 @@ def cmax_df( url ):
     study_info = study_info_cmax(url)
     study_requirements = requirements(study_info.eligibility)
     df = pd.concat([study_info, study_requirements], axis=1)
-    df.to_csv("cmax_df.csv", index = False)
+#    df.to_csv("cmax_df.csv", index = False)
 
     return df
 

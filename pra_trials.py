@@ -22,3 +22,26 @@ links = []
 for elem in link_list:
     link = ('https://www.praclinicaltrials.com' + elem)
     links.append(link)
+
+total_soup = []
+for url in links:
+    link_html = urllib.request.urlopen(url)
+    link_soup = BeautifulSoup(link_html, 'html.parser')
+    total_soup.append(link_soup)
+
+eligibility_list =[]
+for soup in total_soup:
+    text = soup.text.split("\t")
+    index_eligibility = [idx for idx, s in enumerate(text) if 'Who can participate?' in s]
+    if len(index_eligibility) < 1:
+        index_eligibility = [idx for idx, s in enumerate(text) if 'Particulars' in s]
+    eligibility = [text[i] for i in index_eligibility]
+    elig_string = eligibility[-1].replace("\xa0", "").split('participate?')[-1].split('articulars')[-1].split("\n")
+    eligibility_list.append(elig_string)
+
+# removing empty strings
+eligibility_cleaned = []
+for elem in eligibility_list:
+    elem = [item for item in elem if item]
+    eligibility_cleaned.append(elem)
+eligibility_cleaned

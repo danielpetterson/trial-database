@@ -15,7 +15,10 @@ if __name__ == '__main__':
     ccst_url = 'https://www.ccst.co.nz/study-participants/current-studies/'
     # List must be ordered Auckland then Christchurch
     nz_url_list = [acs_url, ccst_url]
-    nz_trials = NZtrials.nz_df(nz_url_list)
+    try:
+        nz_trials = NZtrials.nz_df(nz_url_list)
+    except:
+        print("Failed to get New Zealand trials")
 
 
     ###---Australia Trials---
@@ -26,11 +29,17 @@ if __name__ == '__main__':
     # Compile url list
     nn_url_list = [melb_url, bris_url]
     # Generate dataframe
-    nn_df = nucleus_trials.nucleus_df(nn_url_list)
+    try:
+        nn_df = nucleus_trials.nucleus_df(nn_url_list)
+    except:
+        print("Failed to get Nucleus Network trials")
 
     # Adelaide Cmax Trial List URL
     cmax_url = 'https://www.cmax.com.au/cmax-current-trials/'
-    cmax_df = cmax_trials.cmax_df(cmax_url)
+    try:
+        cmax_df = cmax_trials.cmax_df(cmax_url)
+    except:
+        print("Failed to CMAX trials")
 
     # Combine all Australian Trials
     aus_trials = nn_df.append(cmax_df, ignore_index = True)

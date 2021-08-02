@@ -43,5 +43,5 @@ for soup in total_soup:
 eligibility_cleaned = []
 for elem in eligibility_list:
     elem = [item for item in elem if item]
-    eligibility_cleaned.append(elem)
+    eligibility_cleaned.append(elem[0:-1])
 eligibility_cleaned
